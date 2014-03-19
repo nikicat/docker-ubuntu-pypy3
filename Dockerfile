@@ -9,4 +9,4 @@ RUN curl ez_setup.py | pypy3
 
 ENV HOME /root
 
-WORKINGDIR /root
+WORKDIR /root
