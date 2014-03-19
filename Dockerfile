@@ -9,7 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install pypy3 -y --force-yes
 ENV PYTHONPATH /usr/lib/pypy3/site-packages
 RUN mkdir $PYTHONPATH
 RUN curl https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | pypy3
+RUN rm *.zip
 
 ENV HOME /root
+ENV PATH $PATH:/usr/lib/pypy3/bin
 
 WORKDIR /root
