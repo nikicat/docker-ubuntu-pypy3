@@ -1,4 +1,4 @@
-FROM nikicat/ubuntu:12.04
+FROM nikicat/ubuntu
 
 # install python3 and pypy3
 RUN apt-add-repository 'deb http://nikicat.github.io/pypy3-repo ./'
