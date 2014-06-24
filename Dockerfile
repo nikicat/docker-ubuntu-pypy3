@@ -1,4 +1,4 @@
-FROM yandex/ubuntu:12.04
+FROM yandex/trusty
 
 # install pypy3
 RUN curl http://buildbot.pypy.org/nightly/py3k/pypy-c-jit-latest-linux64.tar.bz2 | tar -jxf - && mv pypy* /opt/pypy3
@@ -10,6 +10,7 @@ RUN curl https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | pypy
 RUN rm *.zip
 # install pip==1.4.1, because 1.5.4 segfaults for unknown reason
 RUN easy_install pip==1.4.1
+RUN ln -s /opt/pypy3/bin/pip /opt/pypy3/bin/pip3
 
 ENV HOME /root
 
